@@ -22,8 +22,8 @@ distrobox() {
 			--image docker.io/library/ubuntu:latest \
 			--volume /media/xxx/Storage/Projects/$distroboxpath:/$distroboxpath \
 			--home /media/xxx/Storage/home/$distroboxname \
-			--init-hooks "sudo apt-get update && sudo apt-get upgrade && curl -fsSL https://deno.land/install.sh | sh" \
-			--additional-packages "nodejs npm curl"
+			--init-hooks "sudo apt-get update && sudo apt-get upgrade && curl -fsSL https://deno.land/install.sh | sh && echo 'cd /$distroboxpath' >> ~/.bashrc" \
+			--additional-packages "nodejs npm curl nano"
 	else
 		command distrobox $@
 	fi
