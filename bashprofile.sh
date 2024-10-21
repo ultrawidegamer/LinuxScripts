@@ -17,7 +17,10 @@ distrobox() {
 
 		command distrobox create \
 			--yes \
-			--unshare-all \
+			--unshare-devsys \
+			--unshare-groups \
+			--unshare-ipc \
+			--unshare-process \
 			--name $distroboxname \
 			--image docker.io/library/ubuntu:latest \
 			--volume /media/xxx/Storage/Projects/$distroboxpath:/$distroboxpath \
